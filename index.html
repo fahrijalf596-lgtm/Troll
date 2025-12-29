@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Game Tekan Sampai 100</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background: #0f172a;
+      color: white;
+      padding-top: 50px;
+    }
+
+    #angka {
+      font-size: 80px;
+      margin: 20px;
+      color: #38bdf8;
+    }
+
+    button {
+      padding: 15px 30px;
+      font-size: 20px;
+      border: none;
+      border-radius: 10px;
+      background: #22c55e;
+      cursor: pointer;
+    }
+
+    button:active {
+      transform: scale(0.95);
+    }
+
+    #pesan {
+      font-size: 20px;
+      margin-top: 20px;
+      color: #facc15;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>🎮 Game Tekan Sampai 100</h1>
+
+  <div id="angka">0</div>
+
+  <button onclick="tambah()">TEKAN!</button>
+
+  <p id="pesan"></p>
+
+  <script>
+    let nilai = 0;
+
+    function tambah() {
+      if (nilai >= 100) return;
+
+      nilai++;
+      document.getElementById("angka").innerText = nilai;
+
+      let pesan = "";
+
+      if (nilai >= 90 && nilai < 100) {
+        pesan = "🔥 Dikit lagi! Jangan menyerah!";
+      }
+
+      if (nilai === 100) {
+        pesan = "🎉 SELAMAT! Kamu mencapai 100!";
+      }
+
+      document.getElementById("pesan").innerText = pesan;
+    }
+  </script>
+
+</body>
+</html>
